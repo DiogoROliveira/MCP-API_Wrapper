@@ -1,7 +1,7 @@
 import json
 import httpx
 from datetime import datetime, timedelta
-from server.utils import get_nutritionix_headers, get_wger_headers, NUTRITIONIX_BASE_URL, WGER_BASE_URL
+from utils import get_nutritionix_headers, get_wger_headers, NUTRITIONIX_BASE_URL, WGER_BASE_URL
 from mcp_server import mcp
 
 @mcp.tool()

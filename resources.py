@@ -1,6 +1,6 @@
 import json
 from mcp_server import mcp
-from server.utils import NUTRITIONIX_BASE_URL, WGER_BASE_URL, NUTRITIONIX_APP_ID, NUTRITIONIX_APP_KEY
+from utils import NUTRITIONIX_BASE_URL, WGER_BASE_URL, NUTRITIONIX_APP_ID, NUTRITIONIX_APP_KEY
 
 @mcp.resource("fitness://status")
 def get_api_status() -> str:

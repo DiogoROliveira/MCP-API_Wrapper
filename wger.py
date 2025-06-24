@@ -1,6 +1,6 @@
 import json
 import httpx
-from server.utils import get_wger_headers, WGER_BASE_URL
+from utils import get_wger_headers, WGER_BASE_URL
 from mcp_server import mcp
 
 @mcp.tool()

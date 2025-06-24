@@ -1,7 +1,7 @@
 import json
 import httpx
 from typing import List
-from server.utils import get_nutritionix_headers, NUTRITIONIX_BASE_URL
+from utils import get_nutritionix_headers, NUTRITIONIX_BASE_URL
 from mcp_server import mcp
 
 @mcp.tool()
