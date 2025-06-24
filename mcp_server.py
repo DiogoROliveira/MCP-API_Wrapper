@@ -3,11 +3,17 @@ from mcp.server.fastmcp import FastMCP
 # Inicializa o MCP
 mcp = FastMCP("Fitness & Nutrition API", dependencies=["httpx"])
 
-# Importa e regista as ferramentas
-from nutritionix import *
-from wger import *
-from combined import *
-from resources import *
+def initialize_tools():
+    """Inicializa as ferramentas de forma lazy"""
+    try:
+        import nutritionix
+        import wger
+        import combined
+        import resources
+        print("Tools loaded successfully")
+    except Exception as e:
+        print(f"Error loading tools: {e}")
 
 if __name__ == "__main__":
+    initialize_tools()
     mcp.run()
