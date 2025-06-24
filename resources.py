@@ -138,3 +138,16 @@ track_weekly_progress(78.5, 75, 3, \"lose_weight\")
 4. Install: mcp install fitness_nutrition_server.py
 """
     return help_text 
+
+
+@mcp.resource("fitness://tools")
+def list_tools() -> str:
+    import json
+    tools = []
+    for tool in mcp.tools:
+        tools.append({
+            "name": tool.name,
+            "description": tool.description,
+            "signature": str(tool.signature)
+        })
+    return json.dumps(tools, indent=2)
