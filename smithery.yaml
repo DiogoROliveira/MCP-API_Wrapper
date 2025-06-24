@@ -1,0 +1,24 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'python', args: ['mcp_server.py'], env: { NUTRITIONIX_APP_ID: config.nutritionixAppId, NUTRITIONIX_APP_KEY: config.nutritionixAppKey } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - nutritionixAppId
+      - nutritionixAppKey
+    properties:
+      nutritionixAppId:
+        type: string
+        description: Nutritionix Application ID
+      nutritionixAppKey:
+        type: string
+        description: Nutritionix Application Key
+  exampleConfig:
+    nutritionixAppId: your_app_id
+    nutritionixAppKey: your_app_key
